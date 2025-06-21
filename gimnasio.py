@@ -1,3 +1,21 @@
+import streamlit as st
+from datetime import datetime
+
+st.title("📋 Registro de Ejercicios de Gimnasio")
+
+# Ejemplo de campos de entrada
+nombre = st.text_input("Introduce tu nombre")
+fecha = st.date_input("Fecha del entrenamiento", format="DD/MM/YYYY")
+ejercicio = st.text_input("Ejercicio")
+repeticiones = st.number_input("Repeticiones", min_value=1, step=1)
+peso = st.number_input("Peso (kg)", min_value=0.0, step=0.5)
+
+if st.button("Guardar"):
+    st.success(f"{nombre}, guardado: {ejercicio}, {repeticiones} reps con {peso} kg el {fecha.strftime('%d/%m/%Y')}")
+
+
+
+
 from datetime import datetime
 
 ejercicios_gimnasio = {
